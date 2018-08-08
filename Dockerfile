@@ -1,10 +1,10 @@
 # pull base image
-FROM python:2.7-alpine as BASE
+FROM alpine as BASE
 
 MAINTAINER Tony Fortes Ramos <amfortesramos@hotmail.com>
 
-RUN echo "===> Add certificate tools"  && \
-    apk --no-cache add openssl ca-certificates
+RUN echo "===> Add Python and certificate tools"  && \
+    apk --no-cache add python py-pip openssl ca-certificates
 
 RUN echo "===> Add build dependencies"  && \
     apk --no-cache add --virtual build-dependencies \
