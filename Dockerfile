@@ -15,7 +15,7 @@ RUN echo "===> Add build dependencies"  && \
     pip install ansible  && \
     \
     echo "===> Installing required networking tools..."  && \
-    pip install netaddr pytest # PyYAML jinja2  && \
+    pip install netaddr pytest yamllint # PyYAML jinja2  && \
     \
     echo "===> Removing package list..."  && \
     apk del build-dependencies
