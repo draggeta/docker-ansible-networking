@@ -11,7 +11,7 @@ RUN echo "Add Python and certificate tools"                     && \
     pip install --upgrade pip cffi                              && \
     \
     echo "Install Ansible"                                      && \
-    pip install ansible==2.6.3                                  && \
+    pip install ansible==2.6.4                                  && \
     \
     echo "Install required networking tools"                    && \
     pip install netaddr pytest yamllint                         && \
