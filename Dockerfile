@@ -19,7 +19,7 @@ RUN echo "Add Python and certificate tools"                     && \
     echo "Remove build tools (reduces size)"                    && \
     apk del build-dependencies                                  && \
     \
-    echo "Adding hosts for convenience..."                      && \
+    echo "Add an empty hosts file"                              && \
     mkdir -p /etc/ansible                                       && \
     echo 'localhost' > /etc/ansible/hosts
 
