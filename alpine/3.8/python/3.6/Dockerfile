@@ -1,17 +1,26 @@
 # pull base image
-FROM alpine:latest as BASE
+FROM alpine:3.8 as BASE
 
 LABEL maintainer="amfortesramos@hotmail.com"
 
 RUN echo "Add Python and certificate tools"                     && \
-    apk --no-cache add python py-pip openssl ca-certificates    && \
+    apk --no-cache add python3~3.6 openssl ca-certificates      && \
+    if [[ ! -e /usr/bin/python ]]; \
+    then ln -sf /usr/bin/python3 /usr/bin/python; \
+    fi                                                          && \
     \
+    echo "Upgrade pip and setuptools"                           && \
+    pip3 install --upgrade pip setuptools                       && \
+    if [ ! -e /usr/bin/pip ]; \
+    then ln -sf /usr/bin/pip3 /usr/bin/pip; \
+    fi                                                          && \
+    \
+    echo "Install build tools"                                  && \
     apk --no-cache add --virtual build-dependencies \
-                python2-dev libffi-dev openssl-dev build-base   && \
-    pip install --upgrade pip cffi                              && \
+                python3-dev libffi-dev openssl-dev build-base   && \
     \
     echo "Install Ansible"                                      && \
-    pip install ansible==2.6.4                                  && \
+    pip install ansible==2.6.3                                  && \
     \
     echo "Install required networking tools"                    && \
     pip install netaddr pytest yamllint                         && \
