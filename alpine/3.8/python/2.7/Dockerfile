@@ -8,7 +8,7 @@ RUN echo "Add Python and certificate tools"                     && \
                 ca-certificates                                 && \
     \
     echo "Upgrade pip and setuptools"                           && \
-    pip install --upgrade pip cffi                              && \
+    pip install --upgrade pip setuptools                        && \
     \
     echo "Install build tools"                                  && \
     apk --no-cache add --virtual build-dependencies \
