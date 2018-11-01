@@ -8,3 +8,9 @@ This repository contains Dockerfiles to build Ansible container images. These im
 The focus of these images are on networking, but they should be usable for most other usecases.
 
 For now the images consist of Alpine 3.8 as the base, with Python 2 or 3 layered on top. Ansible and the networking tools are added on top of these.
+
+## Extra packages
+
+* pytest - Runs doc and unit tests
+* yamllint - Validates yaml files for syntax and style
+* ansible-lint - Validates and Ansible files for syntax and style
