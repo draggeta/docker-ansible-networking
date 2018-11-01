@@ -25,9 +25,6 @@ RUN echo "Add Python and certificate tools"                     && \
     echo "Install required networking tools"                    && \
     pip install netaddr pytest yamllint ansible-lint            && \
     \
-    echo "Enable globstar for recursive globbing"               && \
-    shopt -s globstar                                           && \
-    \
     echo "Remove build tools (reduces size)"                    && \
     apk del build-dependencies                                  && \
     \
