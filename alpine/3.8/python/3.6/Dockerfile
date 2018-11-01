@@ -20,10 +20,13 @@ RUN echo "Add Python and certificate tools"                     && \
                 python3-dev libffi-dev openssl-dev build-base   && \
     \
     echo "Install Ansible"                                      && \
-    pip install ansible==2.6.3                                  && \
+    pip install ansible==2.7.1                                  && \
     \
     echo "Install required networking tools"                    && \
-    pip install netaddr pytest yamllint                         && \
+    pip install netaddr pytest yamllint ansible-lint            && \
+    \
+    echo "Enable globstar for recursive globbing"               && \
+    shopt -s globstar                                           && \
     \
     echo "Remove build tools (reduces size)"                    && \
     apk del build-dependencies                                  && \
