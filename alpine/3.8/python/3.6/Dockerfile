@@ -23,7 +23,8 @@ RUN echo "Add Python and certificate tools"                     && \
     pip install ansible==2.7.1                                  && \
     \
     echo "Install required networking tools"                    && \
-    pip install netaddr pytest yamllint ansible-lint            && \
+    pip install netaddr ansible-modules-hashivault \
+                pytest yamllint ansible-lint                    && \
     \
     echo "Remove build tools (reduces size)"                    && \
     apk del build-dependencies                                  && \
