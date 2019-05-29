@@ -1,5 +1,5 @@
 # pull base image
-FROM alpine:3.8 as BASE
+FROM alpine:3.9 as BASE
 
 LABEL maintainer="amfortesramos@hotmail.com"
 
@@ -15,11 +15,14 @@ RUN echo "Add Python and certificate tools"                     && \
                 python2-dev libffi-dev openssl-dev build-base   && \
     \
     echo "Install Ansible"                                      && \
-    pip install ansible==2.7.1                                  && \
+    pip install ansible==2.7.10                                 && \
     \
-    echo "Install required networking tools"                    && \
-    pip install netaddr ansible-modules-hashivault \
-                pytest yamllint ansible-lint                    && \
+    echo "Install required modules"                             && \
+    pip install ansible-modules-hashivault netaddr jsonbender \
+                pyvalid                                         && \
+    \
+    echo "Install required testing modules"                     && \
+    pip install ansible-lint pytest yamllint                    && \
     \
     echo "Remove build tools (reduces size)"                    && \
     apk del build-dependencies                                  && \
