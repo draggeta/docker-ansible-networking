@@ -20,7 +20,7 @@ RUN echo "Add Python and certificate tools"                     && \
                 python3-dev libffi-dev openssl-dev build-base   && \
     \
     echo "Install Ansible"                                      && \
-    pip install ansible==2.7.10                                 && \
+    pip install ansible==2.7.11                                 && \
     \
     echo "Install required modules"                             && \
     pip install ansible-modules-hashivault netaddr jsonbender \
