@@ -18,8 +18,7 @@ RUN echo "Add Python and certificate tools"                     && \
     pip install ansible==2.7.10                                 && \
     \
     echo "Install required modules"                             && \
-    pip install ansible-modules-hashivault netaddr jsonbender \
-                pyvalid                                         && \
+    pip install ansible-modules-hashivault netaddr jsonbender   && \
     \
     echo "Install required testing modules"                     && \
     pip install ansible-lint pytest yamllint                    && \
