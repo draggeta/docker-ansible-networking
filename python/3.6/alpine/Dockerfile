@@ -1,7 +1,7 @@
 # Pull base image to build with
 FROM alpine:3.9 as BUILD
 
-COPY . /tmp/requirements
+COPY ./requirements /tmp/requirements
 WORKDIR /tmp/requirements
 
 RUN echo "Install dev packages"                                 && \
