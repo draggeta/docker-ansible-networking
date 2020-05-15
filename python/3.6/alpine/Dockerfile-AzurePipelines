@@ -28,7 +28,7 @@ FROM python:3.6-alpine
 LABEL maintainer="amfortesramos@hotmail.com"
 LABEL version="1.0"
 LABEL description="Ansible-Networking Docker Image"
-LABEL "com.azure.dev.pipelines.agent.handler.node.path"="/usr/local/bin/node"
+LABEL "com.azure.dev.pipelines.agent.handler.node.path"="/usr/bin/node"
 
 # Copy the artifacts over. Keeps the prod image small.
 COPY --from=build /root/wheels /root/wheels
