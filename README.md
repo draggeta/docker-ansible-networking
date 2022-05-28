@@ -1,5 +1,7 @@
 # Ansible-Networking Docker Images
 
+> This repository is now archived. It isn't used anymore and hasn't been updated in years at the point of archiving.
+
 [![Docker Automated build](https://img.shields.io/docker/automated/draggeta/ansible-networking.svg?style=flat-square)](https://hub.docker.com/r/draggeta/ansible-networking/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/draggeta/ansible-networking.svg?style=flat-square)](https://hub.docker.com/r/draggeta/ansible-networking/)
 
